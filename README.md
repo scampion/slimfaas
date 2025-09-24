@@ -1,4 +1,6 @@
-# CGI-based FaaS solution for Alpine Linux with nginx
+# SLIMFAAS
+
+## CGI-based FaaS solution for Alpine Linux with nginx
 
 This setup provides a lightweight CGI-based FaaS (Function as a Service) solution for Alpine Linux.
 
