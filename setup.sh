@@ -13,7 +13,7 @@ mkdir -p /var/log/cgi-faas
 mkdir -p /run/fcgiwrap
 
 # 3. Configure nginx
-cat > /etc/nginx/conf.d/cgi-faas.conf << 'EOF'
+cat > /etc/nginx/http.d/cgi-faas.conf << 'EOF'
 server {
     listen 8080;
     server_name localhost;
@@ -408,7 +408,7 @@ cat > /var/www/html/index.html << 'EOF'
 </head>
 <body>
     <div class="container">
-        <h1>🚀 CGI FaaS on Alpine Linux</h1>
+        <h1>SlimFaaS</h1>
         
         <h2>Quick Test</h2>
         <button onclick="testHello()">Test Hello Function</button>
