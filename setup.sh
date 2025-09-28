@@ -482,7 +482,11 @@ depend() {
 
 start() {
     ebegin "Starting fcgiwrap for CGI FaaS"
-    
+
+    # Create the directory for the socket if it doesn't exist
+    mkdir -p /run/fcgiwrap
+    chown nginx:nginx /run/fcgiwrap
+
     # Start fcgiwrap
     spawn-fcgi -s /run/fcgiwrap/socket -f /usr/bin/fcgiwrap -u nginx -g nginx -P /run/fcgiwrap.pid
     
@@ -501,7 +505,9 @@ stop() {
         kill $(cat /run/fcgiwrap.pid)
         rm -f /run/fcgiwrap.pid
     fi
-    
+    # Clean up socket directory
+    rm -rf /run/fcgiwrap
+
     eend $?
 }
 EOF
