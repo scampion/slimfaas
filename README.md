@@ -4,6 +4,8 @@
 
 This setup provides a lightweight CGI-based FaaS (Function as a Service) solution for Alpine Linux.
 
+![alt text](logo.png "Logo SMIMFAAS")
+
 ## Key Features
 
 ✅ **Ultra-lightweight**: Uses Alpine's built-in tools + nginx + fcgiwrap  
